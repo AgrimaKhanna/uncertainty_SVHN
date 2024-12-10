@@ -1,0 +1,12 @@
+venv/
+new_venv/
+data/
+src_deep_ensemble/data/
+src_MCDO/data/
+src_variational_inference/data/
+src_ood/data/
+src_deep_ensemble/hp_results/
+src_MCDO/hp_results/
+src_variational_inference/hp_results/
+
+

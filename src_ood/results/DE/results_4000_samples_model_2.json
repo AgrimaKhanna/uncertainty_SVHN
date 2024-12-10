@@ -1,0 +1,16 @@
+{
+    "auc_entropy": 0.9045,
+    "auc_max_prob": 0.9528,
+    "entropy": {
+        "ind_mean": 0.1588,
+        "ind_std": 0.0114,
+        "ood_mean": 0.8527,
+        "ood_std": 0.0668
+    },
+    "max_prob": {
+        "ind_mean": 0.9969,
+        "ind_std": 0.0476,
+        "ood_mean": 0.1477,
+        "ood_std": 0.0868
+    }
+}

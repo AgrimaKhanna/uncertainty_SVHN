@@ -1,0 +1,433 @@
+[I 2024-11-29 22:12:46,349] A new study created in memory with name: no-name-d8be9f05-af5a-4fd4-ba2d-dc5019438a69
+/home/samir/WORK/AGRIMA_WORK/AML_final_project/src_deep_ensemble/04_hp_search_DE_SVHN_sample_change.py:114: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use suggest_float(..., log=True) instead.
+  learning_rate = trial.suggest_loguniform('lr', 1e-4, 1e-2)
+[W 2024-11-29 22:13:19,931] Trial 2 failed with parameters: {'batch_size': 64, 'num_neurons': 128, 'conv_neurons': 32, 'num_layers': 3, 'lr': 0.0004772313061658861, 'epochs': 91} because of the following error: RuntimeError('Input type (torch.cuda.FloatTensor) and weight type (torch.FloatTensor) should be the same').
+Traceback (most recent call last):
+  File "/home/samir/WORK/AGRIMA_WORK/AML_final_project/venv/lib/python3.10/site-packages/optuna/study/_optimize.py", line 197, in _run_trial
+    value_or_values = func(trial)
+  File "/home/samir/WORK/AGRIMA_WORK/AML_final_project/src_deep_ensemble/04_hp_search_DE_SVHN_sample_change.py", line 181, in <lambda>
+    study.optimize(lambda trial: objective(trial, size, trainset, valset, device, results_dir), n_trials=20, n_jobs=5)
+  File "/home/samir/WORK/AGRIMA_WORK/AML_final_project/src_deep_ensemble/04_hp_search_DE_SVHN_sample_change.py", line 138, in objective
+    ensemble.train(trainloader, nn.CrossEntropyLoss(), optimizers, epochs, device)
+  File "/home/samir/WORK/AGRIMA_WORK/AML_final_project/src_deep_ensemble/04_hp_search_DE_SVHN_sample_change.py", line 71, in train
+    outputs = model(inputs)
+  File "/home/samir/WORK/AGRIMA_WORK/AML_final_project/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/samir/WORK/AGRIMA_WORK/AML_final_project/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/samir/WORK/AGRIMA_WORK/AML_final_project/src_deep_ensemble/04_hp_search_DE_SVHN_sample_change.py", line 52, in forward
+    x = layer(x)
+  File "/home/samir/WORK/AGRIMA_WORK/AML_final_project/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/samir/WORK/AGRIMA_WORK/AML_final_project/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/samir/WORK/AGRIMA_WORK/AML_final_project/venv/lib/python3.10/site-packages/torch/nn/modules/conv.py", line 460, in forward
+    return self._conv_forward(input, self.weight, self.bias)
+  File "/home/samir/WORK/AGRIMA_WORK/AML_final_project/venv/lib/python3.10/site-packages/torch/nn/modules/conv.py", line 456, in _conv_forward
+    return F.conv2d(input, weight, bias, self.stride,
+RuntimeError: Input type (torch.cuda.FloatTensor) and weight type (torch.FloatTensor) should be the same
+[W 2024-11-29 22:13:19,936] Trial 2 failed with value None.
+[W 2024-11-29 22:13:19,986] Trial 0 failed with parameters: {'batch_size': 128, 'num_neurons': 64, 'conv_neurons': 64, 'num_layers': 4, 'lr': 0.0031133822166875794, 'epochs': 83} because of the following error: RuntimeError('Input type (torch.cuda.FloatTensor) and weight type (torch.FloatTensor) should be the same').
+Traceback (most recent call last):
+  File "/home/samir/WORK/AGRIMA_WORK/AML_final_project/venv/lib/python3.10/site-packages/optuna/study/_optimize.py", line 197, in _run_trial
+    value_or_values = func(trial)
+  File "/home/samir/WORK/AGRIMA_WORK/AML_final_project/src_deep_ensemble/04_hp_search_DE_SVHN_sample_change.py", line 181, in <lambda>
+    study.optimize(lambda trial: objective(trial, size, trainset, valset, device, results_dir), n_trials=20, n_jobs=5)
+  File "/home/samir/WORK/AGRIMA_WORK/AML_final_project/src_deep_ensemble/04_hp_search_DE_SVHN_sample_change.py", line 138, in objective
+    ensemble.train(trainloader, nn.CrossEntropyLoss(), optimizers, epochs, device)
+  File "/home/samir/WORK/AGRIMA_WORK/AML_final_project/src_deep_ensemble/04_hp_search_DE_SVHN_sample_change.py", line 71, in train
+    outputs = model(inputs)
+  File "/home/samir/WORK/AGRIMA_WORK/AML_final_project/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/samir/WORK/AGRIMA_WORK/AML_final_project/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/samir/WORK/AGRIMA_WORK/AML_final_project/src_deep_ensemble/04_hp_search_DE_SVHN_sample_change.py", line 52, in forward
+    x = layer(x)
+  File "/home/samir/WORK/AGRIMA_WORK/AML_final_project/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/samir/WORK/AGRIMA_WORK/AML_final_project/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/samir/WORK/AGRIMA_WORK/AML_final_project/venv/lib/python3.10/site-packages/torch/nn/modules/conv.py", line 460, in forward
+    return self._conv_forward(input, self.weight, self.bias)
+  File "/home/samir/WORK/AGRIMA_WORK/AML_final_project/venv/lib/python3.10/site-packages/torch/nn/modules/conv.py", line 456, in _conv_forward
+    return F.conv2d(input, weight, bias, self.stride,
+RuntimeError: Input type (torch.cuda.FloatTensor) and weight type (torch.FloatTensor) should be the same
+[W 2024-11-29 22:13:19,986] Trial 0 failed with value None.
+[W 2024-11-29 22:13:20,005] Trial 1 failed with parameters: {'batch_size': 32, 'num_neurons': 128, 'conv_neurons': 64, 'num_layers': 4, 'lr': 0.0006663882232735514, 'epochs': 89} because of the following error: RuntimeError('Input type (torch.cuda.FloatTensor) and weight type (torch.FloatTensor) should be the same').
+Traceback (most recent call last):
+  File "/home/samir/WORK/AGRIMA_WORK/AML_final_project/venv/lib/python3.10/site-packages/optuna/study/_optimize.py", line 197, in _run_trial
+    value_or_values = func(trial)
+  File "/home/samir/WORK/AGRIMA_WORK/AML_final_project/src_deep_ensemble/04_hp_search_DE_SVHN_sample_change.py", line 181, in <lambda>
+    study.optimize(lambda trial: objective(trial, size, trainset, valset, device, results_dir), n_trials=20, n_jobs=5)
+  File "/home/samir/WORK/AGRIMA_WORK/AML_final_project/src_deep_ensemble/04_hp_search_DE_SVHN_sample_change.py", line 138, in objective
+    ensemble.train(trainloader, nn.CrossEntropyLoss(), optimizers, epochs, device)
+  File "/home/samir/WORK/AGRIMA_WORK/AML_final_project/src_deep_ensemble/04_hp_search_DE_SVHN_sample_change.py", line 71, in train
+    outputs = model(inputs)
+  File "/home/samir/WORK/AGRIMA_WORK/AML_final_project/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/samir/WORK/AGRIMA_WORK/AML_final_project/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/samir/WORK/AGRIMA_WORK/AML_final_project/src_deep_ensemble/04_hp_search_DE_SVHN_sample_change.py", line 52, in forward
+    x = layer(x)
+  File "/home/samir/WORK/AGRIMA_WORK/AML_final_project/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/samir/WORK/AGRIMA_WORK/AML_final_project/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/samir/WORK/AGRIMA_WORK/AML_final_project/venv/lib/python3.10/site-packages/torch/nn/modules/conv.py", line 460, in forward
+    return self._conv_forward(input, self.weight, self.bias)
+  File "/home/samir/WORK/AGRIMA_WORK/AML_final_project/venv/lib/python3.10/site-packages/torch/nn/modules/conv.py", line 456, in _conv_forward
+    return F.conv2d(input, weight, bias, self.stride,
+RuntimeError: Input type (torch.cuda.FloatTensor) and weight type (torch.FloatTensor) should be the same
+[W 2024-11-29 22:13:20,005] Trial 1 failed with value None.
+[W 2024-11-29 22:13:20,013] Trial 4 failed with parameters: {'batch_size': 64, 'num_neurons': 64, 'conv_neurons': 16, 'num_layers': 3, 'lr': 0.008432681074333747, 'epochs': 92} because of the following error: RuntimeError('Input type (torch.cuda.FloatTensor) and weight type (torch.FloatTensor) should be the same').
+Traceback (most recent call last):
+  File "/home/samir/WORK/AGRIMA_WORK/AML_final_project/venv/lib/python3.10/site-packages/optuna/study/_optimize.py", line 197, in _run_trial
+    value_or_values = func(trial)
+  File "/home/samir/WORK/AGRIMA_WORK/AML_final_project/src_deep_ensemble/04_hp_search_DE_SVHN_sample_change.py", line 181, in <lambda>
+    study.optimize(lambda trial: objective(trial, size, trainset, valset, device, results_dir), n_trials=20, n_jobs=5)
+  File "/home/samir/WORK/AGRIMA_WORK/AML_final_project/src_deep_ensemble/04_hp_search_DE_SVHN_sample_change.py", line 138, in objective
+    ensemble.train(trainloader, nn.CrossEntropyLoss(), optimizers, epochs, device)
+  File "/home/samir/WORK/AGRIMA_WORK/AML_final_project/src_deep_ensemble/04_hp_search_DE_SVHN_sample_change.py", line 71, in train
+    outputs = model(inputs)
+  File "/home/samir/WORK/AGRIMA_WORK/AML_final_project/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/samir/WORK/AGRIMA_WORK/AML_final_project/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/samir/WORK/AGRIMA_WORK/AML_final_project/src_deep_ensemble/04_hp_search_DE_SVHN_sample_change.py", line 52, in forward
+    x = layer(x)
+  File "/home/samir/WORK/AGRIMA_WORK/AML_final_project/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/samir/WORK/AGRIMA_WORK/AML_final_project/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/samir/WORK/AGRIMA_WORK/AML_final_project/venv/lib/python3.10/site-packages/torch/nn/modules/conv.py", line 460, in forward
+    return self._conv_forward(input, self.weight, self.bias)
+  File "/home/samir/WORK/AGRIMA_WORK/AML_final_project/venv/lib/python3.10/site-packages/torch/nn/modules/conv.py", line 456, in _conv_forward
+    return F.conv2d(input, weight, bias, self.stride,
+RuntimeError: Input type (torch.cuda.FloatTensor) and weight type (torch.FloatTensor) should be the same
+[W 2024-11-29 22:13:20,013] Trial 4 failed with value None.
+[W 2024-11-29 22:13:20,020] Trial 3 failed with parameters: {'batch_size': 64, 'num_neurons': 256, 'conv_neurons': 16, 'num_layers': 4, 'lr': 0.0019285340595105954, 'epochs': 66} because of the following error: RuntimeError('Input type (torch.cuda.FloatTensor) and weight type (torch.FloatTensor) should be the same').
+Traceback (most recent call last):
+  File "/home/samir/WORK/AGRIMA_WORK/AML_final_project/venv/lib/python3.10/site-packages/optuna/study/_optimize.py", line 197, in _run_trial
+    value_or_values = func(trial)
+  File "/home/samir/WORK/AGRIMA_WORK/AML_final_project/src_deep_ensemble/04_hp_search_DE_SVHN_sample_change.py", line 181, in <lambda>
+    study.optimize(lambda trial: objective(trial, size, trainset, valset, device, results_dir), n_trials=20, n_jobs=5)
+  File "/home/samir/WORK/AGRIMA_WORK/AML_final_project/src_deep_ensemble/04_hp_search_DE_SVHN_sample_change.py", line 138, in objective
+    ensemble.train(trainloader, nn.CrossEntropyLoss(), optimizers, epochs, device)
+  File "/home/samir/WORK/AGRIMA_WORK/AML_final_project/src_deep_ensemble/04_hp_search_DE_SVHN_sample_change.py", line 71, in train
+    outputs = model(inputs)
+  File "/home/samir/WORK/AGRIMA_WORK/AML_final_project/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/samir/WORK/AGRIMA_WORK/AML_final_project/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/samir/WORK/AGRIMA_WORK/AML_final_project/src_deep_ensemble/04_hp_search_DE_SVHN_sample_change.py", line 52, in forward
+    x = layer(x)
+  File "/home/samir/WORK/AGRIMA_WORK/AML_final_project/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/samir/WORK/AGRIMA_WORK/AML_final_project/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/samir/WORK/AGRIMA_WORK/AML_final_project/venv/lib/python3.10/site-packages/torch/nn/modules/conv.py", line 460, in forward
+    return self._conv_forward(input, self.weight, self.bias)
+  File "/home/samir/WORK/AGRIMA_WORK/AML_final_project/venv/lib/python3.10/site-packages/torch/nn/modules/conv.py", line 456, in _conv_forward
+    return F.conv2d(input, weight, bias, self.stride,
+RuntimeError: Input type (torch.cuda.FloatTensor) and weight type (torch.FloatTensor) should be the same
+[W 2024-11-29 22:13:20,020] Trial 3 failed with value None.
+Using downloaded and verified file: ./data/train_32x32.mat
+Using downloaded and verified file: ./data/test_32x32.mat
+
+Starting hyperparameter search for 4000 samples per class...
+Traceback (most recent call last):
+  File "/home/samir/WORK/AGRIMA_WORK/AML_final_project/src_deep_ensemble/04_hp_search_DE_SVHN_sample_change.py", line 181, in <module>
+    study.optimize(lambda trial: objective(trial, size, trainset, valset, device, results_dir), n_trials=20, n_jobs=5)
+  File "/home/samir/WORK/AGRIMA_WORK/AML_final_project/venv/lib/python3.10/site-packages/optuna/study/study.py", line 475, in optimize
+    _optimize(
+  File "/home/samir/WORK/AGRIMA_WORK/AML_final_project/venv/lib/python3.10/site-packages/optuna/study/_optimize.py", line 100, in _optimize
+    f.result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 451, in result
+    return self.__get_result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 403, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/samir/WORK/AGRIMA_WORK/AML_final_project/venv/lib/python3.10/site-packages/optuna/study/_optimize.py", line 160, in _optimize_sequential
+    frozen_trial = _run_trial(study, func, catch)
+  File "/home/samir/WORK/AGRIMA_WORK/AML_final_project/venv/lib/python3.10/site-packages/optuna/study/_optimize.py", line 248, in _run_trial
+    raise func_err
+  File "/home/samir/WORK/AGRIMA_WORK/AML_final_project/venv/lib/python3.10/site-packages/optuna/study/_optimize.py", line 197, in _run_trial
+    value_or_values = func(trial)
+  File "/home/samir/WORK/AGRIMA_WORK/AML_final_project/src_deep_ensemble/04_hp_search_DE_SVHN_sample_change.py", line 181, in <lambda>
+    study.optimize(lambda trial: objective(trial, size, trainset, valset, device, results_dir), n_trials=20, n_jobs=5)
+  File "/home/samir/WORK/AGRIMA_WORK/AML_final_project/src_deep_ensemble/04_hp_search_DE_SVHN_sample_change.py", line 138, in objective
+    ensemble.train(trainloader, nn.CrossEntropyLoss(), optimizers, epochs, device)
+  File "/home/samir/WORK/AGRIMA_WORK/AML_final_project/src_deep_ensemble/04_hp_search_DE_SVHN_sample_change.py", line 71, in train
+    outputs = model(inputs)
+  File "/home/samir/WORK/AGRIMA_WORK/AML_final_project/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/samir/WORK/AGRIMA_WORK/AML_final_project/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/samir/WORK/AGRIMA_WORK/AML_final_project/src_deep_ensemble/04_hp_search_DE_SVHN_sample_change.py", line 52, in forward
+    x = layer(x)
+  File "/home/samir/WORK/AGRIMA_WORK/AML_final_project/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/samir/WORK/AGRIMA_WORK/AML_final_project/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/samir/WORK/AGRIMA_WORK/AML_final_project/venv/lib/python3.10/site-packages/torch/nn/modules/conv.py", line 460, in forward
+    return self._conv_forward(input, self.weight, self.bias)
+  File "/home/samir/WORK/AGRIMA_WORK/AML_final_project/venv/lib/python3.10/site-packages/torch/nn/modules/conv.py", line 456, in _conv_forward
+    return F.conv2d(input, weight, bias, self.stride,
+RuntimeError: Input type (torch.cuda.FloatTensor) and weight type (torch.FloatTensor) should be the same
+[I 2024-11-29 22:14:41,857] A new study created in memory with name: no-name-b2d27d3d-f852-4445-a18d-2fc2ecfbbb5f
+/home/samir/WORK/AGRIMA_WORK/AML_final_project/src_deep_ensemble/04_hp_search_DE_SVHN_sample_change.py:114: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use suggest_float(..., log=True) instead.
+  learning_rate = trial.suggest_loguniform('lr', 1e-4, 1e-2)
+[W 2024-11-29 22:14:43,471] Trial 0 failed with parameters: {'batch_size': 128, 'num_neurons': 64, 'conv_neurons': 64, 'num_layers': 4, 'lr': 0.00303753465601325, 'epochs': 92} because of the following error: RuntimeError('Input type (torch.cuda.FloatTensor) and weight type (torch.FloatTensor) should be the same').
+Traceback (most recent call last):
+  File "/home/samir/WORK/AGRIMA_WORK/AML_final_project/venv/lib/python3.10/site-packages/optuna/study/_optimize.py", line 197, in _run_trial
+    value_or_values = func(trial)
+  File "/home/samir/WORK/AGRIMA_WORK/AML_final_project/src_deep_ensemble/04_hp_search_DE_SVHN_sample_change.py", line 181, in <lambda>
+    study.optimize(lambda trial: objective(trial, size, trainset, valset, device, results_dir), n_trials=20, n_jobs=5)
+  File "/home/samir/WORK/AGRIMA_WORK/AML_final_project/src_deep_ensemble/04_hp_search_DE_SVHN_sample_change.py", line 138, in objective
+    ensemble.train(trainloader, nn.CrossEntropyLoss(), optimizers, epochs, device)
+  File "/home/samir/WORK/AGRIMA_WORK/AML_final_project/src_deep_ensemble/04_hp_search_DE_SVHN_sample_change.py", line 71, in train
+    outputs = model(inputs)
+  File "/home/samir/WORK/AGRIMA_WORK/AML_final_project/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/samir/WORK/AGRIMA_WORK/AML_final_project/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/samir/WORK/AGRIMA_WORK/AML_final_project/src_deep_ensemble/04_hp_search_DE_SVHN_sample_change.py", line 52, in forward
+    x = layer(x)
+  File "/home/samir/WORK/AGRIMA_WORK/AML_final_project/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/samir/WORK/AGRIMA_WORK/AML_final_project/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/samir/WORK/AGRIMA_WORK/AML_final_project/venv/lib/python3.10/site-packages/torch/nn/modules/conv.py", line 460, in forward
+    return self._conv_forward(input, self.weight, self.bias)
+  File "/home/samir/WORK/AGRIMA_WORK/AML_final_project/venv/lib/python3.10/site-packages/torch/nn/modules/conv.py", line 456, in _conv_forward
+    return F.conv2d(input, weight, bias, self.stride,
+RuntimeError: Input type (torch.cuda.FloatTensor) and weight type (torch.FloatTensor) should be the same
+[W 2024-11-29 22:14:43,472] Trial 0 failed with value None.
+[W 2024-11-29 22:14:43,479] Trial 1 failed with parameters: {'batch_size': 32, 'num_neurons': 64, 'conv_neurons': 32, 'num_layers': 3, 'lr': 0.00015574572300557383, 'epochs': 89} because of the following error: RuntimeError('Input type (torch.cuda.FloatTensor) and weight type (torch.FloatTensor) should be the same').
+Traceback (most recent call last):
+  File "/home/samir/WORK/AGRIMA_WORK/AML_final_project/venv/lib/python3.10/site-packages/optuna/study/_optimize.py", line 197, in _run_trial
+    value_or_values = func(trial)
+  File "/home/samir/WORK/AGRIMA_WORK/AML_final_project/src_deep_ensemble/04_hp_search_DE_SVHN_sample_change.py", line 181, in <lambda>
+    study.optimize(lambda trial: objective(trial, size, trainset, valset, device, results_dir), n_trials=20, n_jobs=5)
+  File "/home/samir/WORK/AGRIMA_WORK/AML_final_project/src_deep_ensemble/04_hp_search_DE_SVHN_sample_change.py", line 138, in objective
+    ensemble.train(trainloader, nn.CrossEntropyLoss(), optimizers, epochs, device)
+  File "/home/samir/WORK/AGRIMA_WORK/AML_final_project/src_deep_ensemble/04_hp_search_DE_SVHN_sample_change.py", line 71, in train
+    outputs = model(inputs)
+  File "/home/samir/WORK/AGRIMA_WORK/AML_final_project/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/samir/WORK/AGRIMA_WORK/AML_final_project/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/samir/WORK/AGRIMA_WORK/AML_final_project/src_deep_ensemble/04_hp_search_DE_SVHN_sample_change.py", line 52, in forward
+    x = layer(x)
+  File "/home/samir/WORK/AGRIMA_WORK/AML_final_project/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/samir/WORK/AGRIMA_WORK/AML_final_project/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/samir/WORK/AGRIMA_WORK/AML_final_project/venv/lib/python3.10/site-packages/torch/nn/modules/conv.py", line 460, in forward
+    return self._conv_forward(input, self.weight, self.bias)
+  File "/home/samir/WORK/AGRIMA_WORK/AML_final_project/venv/lib/python3.10/site-packages/torch/nn/modules/conv.py", line 456, in _conv_forward
+    return F.conv2d(input, weight, bias, self.stride,
+RuntimeError: Input type (torch.cuda.FloatTensor) and weight type (torch.FloatTensor) should be the same
+[W 2024-11-29 22:14:43,479] Trial 1 failed with value None.
+[W 2024-11-29 22:14:43,486] Trial 2 failed with parameters: {'batch_size': 128, 'num_neurons': 256, 'conv_neurons': 16, 'num_layers': 2, 'lr': 0.007508628011398415, 'epochs': 74} because of the following error: RuntimeError('Input type (torch.cuda.FloatTensor) and weight type (torch.FloatTensor) should be the same').
+Traceback (most recent call last):
+  File "/home/samir/WORK/AGRIMA_WORK/AML_final_project/venv/lib/python3.10/site-packages/optuna/study/_optimize.py", line 197, in _run_trial
+    value_or_values = func(trial)
+  File "/home/samir/WORK/AGRIMA_WORK/AML_final_project/src_deep_ensemble/04_hp_search_DE_SVHN_sample_change.py", line 181, in <lambda>
+    study.optimize(lambda trial: objective(trial, size, trainset, valset, device, results_dir), n_trials=20, n_jobs=5)
+  File "/home/samir/WORK/AGRIMA_WORK/AML_final_project/src_deep_ensemble/04_hp_search_DE_SVHN_sample_change.py", line 138, in objective
+    ensemble.train(trainloader, nn.CrossEntropyLoss(), optimizers, epochs, device)
+  File "/home/samir/WORK/AGRIMA_WORK/AML_final_project/src_deep_ensemble/04_hp_search_DE_SVHN_sample_change.py", line 71, in train
+    outputs = model(inputs)
+  File "/home/samir/WORK/AGRIMA_WORK/AML_final_project/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/samir/WORK/AGRIMA_WORK/AML_final_project/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/samir/WORK/AGRIMA_WORK/AML_final_project/src_deep_ensemble/04_hp_search_DE_SVHN_sample_change.py", line 52, in forward
+    x = layer(x)
+  File "/home/samir/WORK/AGRIMA_WORK/AML_final_project/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/samir/WORK/AGRIMA_WORK/AML_final_project/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/samir/WORK/AGRIMA_WORK/AML_final_project/venv/lib/python3.10/site-packages/torch/nn/modules/conv.py", line 460, in forward
+    return self._conv_forward(input, self.weight, self.bias)
+  File "/home/samir/WORK/AGRIMA_WORK/AML_final_project/venv/lib/python3.10/site-packages/torch/nn/modules/conv.py", line 456, in _conv_forward
+    return F.conv2d(input, weight, bias, self.stride,
+RuntimeError: Input type (torch.cuda.FloatTensor) and weight type (torch.FloatTensor) should be the same
+[W 2024-11-29 22:14:43,486] Trial 2 failed with value None.
+[W 2024-11-29 22:14:43,493] Trial 4 failed with parameters: {'batch_size': 128, 'num_neurons': 256, 'conv_neurons': 64, 'num_layers': 2, 'lr': 0.00012216265477876136, 'epochs': 58} because of the following error: RuntimeError('Input type (torch.cuda.FloatTensor) and weight type (torch.FloatTensor) should be the same').
+Traceback (most recent call last):
+  File "/home/samir/WORK/AGRIMA_WORK/AML_final_project/venv/lib/python3.10/site-packages/optuna/study/_optimize.py", line 197, in _run_trial
+    value_or_values = func(trial)
+  File "/home/samir/WORK/AGRIMA_WORK/AML_final_project/src_deep_ensemble/04_hp_search_DE_SVHN_sample_change.py", line 181, in <lambda>
+    study.optimize(lambda trial: objective(trial, size, trainset, valset, device, results_dir), n_trials=20, n_jobs=5)
+  File "/home/samir/WORK/AGRIMA_WORK/AML_final_project/src_deep_ensemble/04_hp_search_DE_SVHN_sample_change.py", line 138, in objective
+    ensemble.train(trainloader, nn.CrossEntropyLoss(), optimizers, epochs, device)
+  File "/home/samir/WORK/AGRIMA_WORK/AML_final_project/src_deep_ensemble/04_hp_search_DE_SVHN_sample_change.py", line 71, in train
+    outputs = model(inputs)
+  File "/home/samir/WORK/AGRIMA_WORK/AML_final_project/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/samir/WORK/AGRIMA_WORK/AML_final_project/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/samir/WORK/AGRIMA_WORK/AML_final_project/src_deep_ensemble/04_hp_search_DE_SVHN_sample_change.py", line 52, in forward
+    x = layer(x)
+  File "/home/samir/WORK/AGRIMA_WORK/AML_final_project/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/samir/WORK/AGRIMA_WORK/AML_final_project/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/samir/WORK/AGRIMA_WORK/AML_final_project/venv/lib/python3.10/site-packages/torch/nn/modules/conv.py", line 460, in forward
+    return self._conv_forward(input, self.weight, self.bias)
+  File "/home/samir/WORK/AGRIMA_WORK/AML_final_project/venv/lib/python3.10/site-packages/torch/nn/modules/conv.py", line 456, in _conv_forward
+    return F.conv2d(input, weight, bias, self.stride,
+RuntimeError: Input type (torch.cuda.FloatTensor) and weight type (torch.FloatTensor) should be the same
+[W 2024-11-29 22:14:43,493] Trial 4 failed with value None.
+[W 2024-11-29 22:14:43,499] Trial 3 failed with parameters: {'batch_size': 128, 'num_neurons': 256, 'conv_neurons': 64, 'num_layers': 4, 'lr': 0.005221559635533772, 'epochs': 68} because of the following error: RuntimeError('Input type (torch.cuda.FloatTensor) and weight type (torch.FloatTensor) should be the same').
+Traceback (most recent call last):
+  File "/home/samir/WORK/AGRIMA_WORK/AML_final_project/venv/lib/python3.10/site-packages/optuna/study/_optimize.py", line 197, in _run_trial
+    value_or_values = func(trial)
+  File "/home/samir/WORK/AGRIMA_WORK/AML_final_project/src_deep_ensemble/04_hp_search_DE_SVHN_sample_change.py", line 181, in <lambda>
+    study.optimize(lambda trial: objective(trial, size, trainset, valset, device, results_dir), n_trials=20, n_jobs=5)
+  File "/home/samir/WORK/AGRIMA_WORK/AML_final_project/src_deep_ensemble/04_hp_search_DE_SVHN_sample_change.py", line 138, in objective
+    ensemble.train(trainloader, nn.CrossEntropyLoss(), optimizers, epochs, device)
+  File "/home/samir/WORK/AGRIMA_WORK/AML_final_project/src_deep_ensemble/04_hp_search_DE_SVHN_sample_change.py", line 71, in train
+    outputs = model(inputs)
+  File "/home/samir/WORK/AGRIMA_WORK/AML_final_project/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/samir/WORK/AGRIMA_WORK/AML_final_project/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/samir/WORK/AGRIMA_WORK/AML_final_project/src_deep_ensemble/04_hp_search_DE_SVHN_sample_change.py", line 52, in forward
+    x = layer(x)
+  File "/home/samir/WORK/AGRIMA_WORK/AML_final_project/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/samir/WORK/AGRIMA_WORK/AML_final_project/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/samir/WORK/AGRIMA_WORK/AML_final_project/venv/lib/python3.10/site-packages/torch/nn/modules/conv.py", line 460, in forward
+    return self._conv_forward(input, self.weight, self.bias)
+  File "/home/samir/WORK/AGRIMA_WORK/AML_final_project/venv/lib/python3.10/site-packages/torch/nn/modules/conv.py", line 456, in _conv_forward
+    return F.conv2d(input, weight, bias, self.stride,
+RuntimeError: Input type (torch.cuda.FloatTensor) and weight type (torch.FloatTensor) should be the same
+[W 2024-11-29 22:14:43,499] Trial 3 failed with value None.
+Using downloaded and verified file: ./data/train_32x32.mat
+Using downloaded and verified file: ./data/test_32x32.mat
+
+Starting hyperparameter search for 1 samples per class...
+Traceback (most recent call last):
+  File "/home/samir/WORK/AGRIMA_WORK/AML_final_project/src_deep_ensemble/04_hp_search_DE_SVHN_sample_change.py", line 181, in <module>
+    study.optimize(lambda trial: objective(trial, size, trainset, valset, device, results_dir), n_trials=20, n_jobs=5)
+  File "/home/samir/WORK/AGRIMA_WORK/AML_final_project/venv/lib/python3.10/site-packages/optuna/study/study.py", line 475, in optimize
+    _optimize(
+  File "/home/samir/WORK/AGRIMA_WORK/AML_final_project/venv/lib/python3.10/site-packages/optuna/study/_optimize.py", line 100, in _optimize
+    f.result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 451, in result
+    return self.__get_result()
+  File "/usr/lib/python3.10/concurrent/futures/_base.py", line 403, in __get_result
+    raise self._exception
+  File "/usr/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/samir/WORK/AGRIMA_WORK/AML_final_project/venv/lib/python3.10/site-packages/optuna/study/_optimize.py", line 160, in _optimize_sequential
+    frozen_trial = _run_trial(study, func, catch)
+  File "/home/samir/WORK/AGRIMA_WORK/AML_final_project/venv/lib/python3.10/site-packages/optuna/study/_optimize.py", line 248, in _run_trial
+    raise func_err
+  File "/home/samir/WORK/AGRIMA_WORK/AML_final_project/venv/lib/python3.10/site-packages/optuna/study/_optimize.py", line 197, in _run_trial
+    value_or_values = func(trial)
+  File "/home/samir/WORK/AGRIMA_WORK/AML_final_project/src_deep_ensemble/04_hp_search_DE_SVHN_sample_change.py", line 181, in <lambda>
+    study.optimize(lambda trial: objective(trial, size, trainset, valset, device, results_dir), n_trials=20, n_jobs=5)
+  File "/home/samir/WORK/AGRIMA_WORK/AML_final_project/src_deep_ensemble/04_hp_search_DE_SVHN_sample_change.py", line 138, in objective
+    ensemble.train(trainloader, nn.CrossEntropyLoss(), optimizers, epochs, device)
+  File "/home/samir/WORK/AGRIMA_WORK/AML_final_project/src_deep_ensemble/04_hp_search_DE_SVHN_sample_change.py", line 71, in train
+    outputs = model(inputs)
+  File "/home/samir/WORK/AGRIMA_WORK/AML_final_project/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/samir/WORK/AGRIMA_WORK/AML_final_project/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/samir/WORK/AGRIMA_WORK/AML_final_project/src_deep_ensemble/04_hp_search_DE_SVHN_sample_change.py", line 52, in forward
+    x = layer(x)
+  File "/home/samir/WORK/AGRIMA_WORK/AML_final_project/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/samir/WORK/AGRIMA_WORK/AML_final_project/venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/samir/WORK/AGRIMA_WORK/AML_final_project/venv/lib/python3.10/site-packages/torch/nn/modules/conv.py", line 460, in forward
+    return self._conv_forward(input, self.weight, self.bias)
+  File "/home/samir/WORK/AGRIMA_WORK/AML_final_project/venv/lib/python3.10/site-packages/torch/nn/modules/conv.py", line 456, in _conv_forward
+    return F.conv2d(input, weight, bias, self.stride,
+RuntimeError: Input type (torch.cuda.FloatTensor) and weight type (torch.FloatTensor) should be the same
+[I 2024-11-29 22:17:25,598] A new study created in memory with name: no-name-11e146f6-7933-43b4-9f3d-06a7b4f9dc31
+/home/samir/WORK/AGRIMA_WORK/AML_final_project/src_deep_ensemble/04_hp_search_DE_SVHN_sample_change.py:114: FutureWarning: suggest_loguniform has been deprecated in v3.0.0. This feature will be removed in v6.0.0. See https://github.com/optuna/optuna/releases/tag/v3.0.0. Use suggest_float(..., log=True) instead.
+  learning_rate = trial.suggest_loguniform('lr', 1e-4, 1e-2)
+[I 2024-11-29 22:17:37,260] Trial 4 finished with value: 2.34918732047081 and parameters: {'batch_size': 128, 'num_neurons': 256, 'conv_neurons': 16, 'num_layers': 2, 'lr': 0.000949435900909381, 'epochs': 67}. Best is trial 4 with value: 2.34918732047081.
+[I 2024-11-29 22:17:40,537] Trial 0 finished with value: 2.3404914178666036 and parameters: {'batch_size': 32, 'num_neurons': 128, 'conv_neurons': 16, 'num_layers': 2, 'lr': 0.0011490415571886188, 'epochs': 79}. Best is trial 0 with value: 2.3404914178666036.
+[I 2024-11-29 22:17:40,595] Trial 3 finished with value: 2.3400689620005934 and parameters: {'batch_size': 64, 'num_neurons': 256, 'conv_neurons': 16, 'num_layers': 3, 'lr': 0.0026186792042066035, 'epochs': 66}. Best is trial 3 with value: 2.3400689620005934.
+[I 2024-11-29 22:17:40,746] Trial 1 finished with value: 2.328551207378412 and parameters: {'batch_size': 32, 'num_neurons': 64, 'conv_neurons': 16, 'num_layers': 4, 'lr': 0.0032974771230069298, 'epochs': 51}. Best is trial 1 with value: 2.328551207378412.
+[I 2024-11-29 22:17:42,689] Trial 2 finished with value: 2.337613863281057 and parameters: {'batch_size': 64, 'num_neurons': 128, 'conv_neurons': 64, 'num_layers': 2, 'lr': 0.0014211599889619203, 'epochs': 73}. Best is trial 1 with value: 2.328551207378412.
+[I 2024-11-29 22:17:57,343] Trial 6 finished with value: 2.3344027798646576 and parameters: {'batch_size': 32, 'num_neurons': 64, 'conv_neurons': 16, 'num_layers': 2, 'lr': 0.0006961593924979577, 'epochs': 96}. Best is trial 1 with value: 2.328551207378412.
+[I 2024-11-29 22:17:59,274] Trial 9 finished with value: 2.3429042807050573 and parameters: {'batch_size': 32, 'num_neurons': 128, 'conv_neurons': 32, 'num_layers': 2, 'lr': 0.0018886228367536834, 'epochs': 79}. Best is trial 1 with value: 2.328551207378412.
+[I 2024-11-29 22:18:00,177] Trial 8 finished with value: 2.340028574512263 and parameters: {'batch_size': 32, 'num_neurons': 128, 'conv_neurons': 16, 'num_layers': 4, 'lr': 0.0006430145033524492, 'epochs': 67}. Best is trial 1 with value: 2.328551207378412.
+[I 2024-11-29 22:18:00,968] Trial 5 finished with value: 2.3402726257903668 and parameters: {'batch_size': 64, 'num_neurons': 128, 'conv_neurons': 64, 'num_layers': 2, 'lr': 0.0032251166995020644, 'epochs': 81}. Best is trial 1 with value: 2.328551207378412.
+[I 2024-11-29 22:18:13,456] Trial 7 finished with value: 2.3396843314170837 and parameters: {'batch_size': 128, 'num_neurons': 128, 'conv_neurons': 64, 'num_layers': 3, 'lr': 0.0018057175434344835, 'epochs': 75}. Best is trial 1 with value: 2.328551207378412.
+[I 2024-11-29 22:18:17,670] Trial 12 finished with value: 2.338957644716094 and parameters: {'batch_size': 64, 'num_neurons': 64, 'conv_neurons': 32, 'num_layers': 2, 'lr': 0.001195905426047253, 'epochs': 80}. Best is trial 1 with value: 2.328551207378412.
+[I 2024-11-29 22:18:19,557] Trial 10 finished with value: 2.320439027834542 and parameters: {'batch_size': 64, 'num_neurons': 256, 'conv_neurons': 16, 'num_layers': 4, 'lr': 0.00015605640592369509, 'epochs': 85}. Best is trial 10 with value: 2.320439027834542.
+[I 2024-11-29 22:18:21,727] Trial 11 finished with value: 2.3274031201745293 and parameters: {'batch_size': 32, 'num_neurons': 64, 'conv_neurons': 64, 'num_layers': 3, 'lr': 0.001548644398793375, 'epochs': 56}. Best is trial 10 with value: 2.320439027834542.
+[I 2024-11-29 22:18:25,075] Trial 13 finished with value: 2.335511327549151 and parameters: {'batch_size': 32, 'num_neurons': 128, 'conv_neurons': 32, 'num_layers': 4, 'lr': 0.0017693945503550585, 'epochs': 65}. Best is trial 10 with value: 2.320439027834542.
+[I 2024-11-29 22:18:33,446] Trial 14 finished with value: 2.3266805782439604 and parameters: {'batch_size': 32, 'num_neurons': 64, 'conv_neurons': 32, 'num_layers': 4, 'lr': 0.009665721373748035, 'epochs': 53}. Best is trial 10 with value: 2.320439027834542.
+[I 2024-11-29 22:18:36,231] Trial 16 finished with value: 2.303789579184951 and parameters: {'batch_size': 32, 'num_neurons': 256, 'conv_neurons': 16, 'num_layers': 4, 'lr': 0.00013115674888919485, 'epochs': 50}. Best is trial 16 with value: 2.303789579184951.
+[I 2024-11-29 22:18:40,029] Trial 15 finished with value: 2.3347798623856466 and parameters: {'batch_size': 32, 'num_neurons': 64, 'conv_neurons': 16, 'num_layers': 4, 'lr': 0.00020364967323210356, 'epochs': 99}. Best is trial 16 with value: 2.303789579184951.
+[I 2024-11-29 22:18:51,032] Trial 18 finished with value: 2.3516322087637986 and parameters: {'batch_size': 64, 'num_neurons': 256, 'conv_neurons': 64, 'num_layers': 3, 'lr': 0.00018958010412481097, 'epochs': 90}. Best is trial 16 with value: 2.303789579184951.
+[I 2024-11-29 22:18:51,763] Trial 17 finished with value: 2.3433424309839177 and parameters: {'batch_size': 64, 'num_neurons': 256, 'conv_neurons': 64, 'num_layers': 4, 'lr': 0.00015646521786834113, 'epochs': 93}. Best is trial 16 with value: 2.303789579184951.
+[I 2024-11-29 22:18:52,734] Trial 19 finished with value: 2.3465917200981816 and parameters: {'batch_size': 64, 'num_neurons': 256, 'conv_neurons': 32, 'num_layers': 4, 'lr': 0.00015854093620925634, 'epochs': 91}. Best is trial 16 with value: 2.303789579184951.
+[I 2024-11-29 22:18:52,736] A new study created in memory with name: no-name-3b067209-72d0-4554-889f-aefbe1c798c8
+[I 2024-11-30 01:41:10,235] Trial 1 finished with value: 1.5789883287647102 and parameters: {'batch_size': 64, 'num_neurons': 64, 'conv_neurons': 16, 'num_layers': 3, 'lr': 0.0007054078491246085, 'epochs': 55}. Best is trial 1 with value: 1.5789883287647102.
+[I 2024-11-30 02:49:02,622] Trial 0 finished with value: 1.5592725604772568 and parameters: {'batch_size': 128, 'num_neurons': 128, 'conv_neurons': 32, 'num_layers': 4, 'lr': 0.0002630676763932912, 'epochs': 63}. Best is trial 0 with value: 1.5592725604772568.
+[I 2024-11-30 03:16:39,435] Trial 4 finished with value: 1.5647932743724389 and parameters: {'batch_size': 64, 'num_neurons': 128, 'conv_neurons': 16, 'num_layers': 4, 'lr': 0.0002866423399391269, 'epochs': 71}. Best is trial 0 with value: 1.5592725604772568.
+[I 2024-11-30 05:56:20,810] Trial 2 finished with value: 1.5612799231010148 and parameters: {'batch_size': 64, 'num_neurons': 256, 'conv_neurons': 16, 'num_layers': 4, 'lr': 0.0003262069160988516, 'epochs': 98}. Best is trial 0 with value: 1.5592725604772568.
+[I 2024-11-30 06:25:44,195] Trial 6 finished with value: 1.580561888217926 and parameters: {'batch_size': 128, 'num_neurons': 128, 'conv_neurons': 16, 'num_layers': 3, 'lr': 0.0003960872342452863, 'epochs': 74}. Best is trial 0 with value: 1.5592725604772568.
+[I 2024-11-30 08:59:42,901] Trial 5 finished with value: 1.731096738576889 and parameters: {'batch_size': 128, 'num_neurons': 64, 'conv_neurons': 32, 'num_layers': 4, 'lr': 0.002674802571847521, 'epochs': 99}. Best is trial 0 with value: 1.5592725604772568.
+[I 2024-11-30 10:17:14,216] Trial 7 finished with value: 1.592221143879468 and parameters: {'batch_size': 64, 'num_neurons': 64, 'conv_neurons': 64, 'num_layers': 2, 'lr': 0.0004518276719710333, 'epochs': 82}. Best is trial 0 with value: 1.5592725604772568.
+[I 2024-11-30 11:04:47,021] Trial 8 finished with value: 1.8821559193768078 and parameters: {'batch_size': 64, 'num_neurons': 128, 'conv_neurons': 64, 'num_layers': 2, 'lr': 0.001762082738102013, 'epochs': 59}. Best is trial 0 with value: 1.5592725604772568.
+[I 2024-11-30 13:12:41,750] Trial 9 finished with value: 2.162563737434677 and parameters: {'batch_size': 64, 'num_neurons': 128, 'conv_neurons': 64, 'num_layers': 2, 'lr': 0.0032022574549649455, 'epochs': 79}. Best is trial 0 with value: 1.5592725604772568.
+[I 2024-11-30 15:37:55,195] Trial 10 finished with value: 1.745840385556221 and parameters: {'batch_size': 128, 'num_neurons': 256, 'conv_neurons': 64, 'num_layers': 2, 'lr': 0.0017321771322926396, 'epochs': 81}. Best is trial 0 with value: 1.5592725604772568.
+[I 2024-11-30 16:09:58,463] Trial 3 finished with value: 1.5515298224702667 and parameters: {'batch_size': 64, 'num_neurons': 64, 'conv_neurons': 64, 'num_layers': 4, 'lr': 0.0007134751016373628, 'epochs': 93}. Best is trial 3 with value: 1.5515298224702667.
+[I 2024-11-30 16:53:36,288] Trial 11 finished with value: 1.5822632418403142 and parameters: {'batch_size': 64, 'num_neurons': 128, 'conv_neurons': 16, 'num_layers': 3, 'lr': 0.0020459430172378367, 'epochs': 94}. Best is trial 3 with value: 1.5515298224702667.
+[I 2024-11-30 17:16:25,005] Trial 13 finished with value: 2.0347433784340003 and parameters: {'batch_size': 64, 'num_neurons': 64, 'conv_neurons': 16, 'num_layers': 2, 'lr': 0.00636883755618004, 'epochs': 87}. Best is trial 3 with value: 1.5515298224702667.
+[I 2024-11-30 21:17:21,754] Trial 12 finished with value: 1.5500335089768036 and parameters: {'batch_size': 64, 'num_neurons': 64, 'conv_neurons': 32, 'num_layers': 4, 'lr': 0.0004579023333667101, 'epochs': 95}. Best is trial 12 with value: 1.5500335089768036.
+[I 2024-11-30 22:10:58,588] Trial 14 finished with value: 1.5561470400755573 and parameters: {'batch_size': 32, 'num_neurons': 128, 'conv_neurons': 32, 'num_layers': 4, 'lr': 0.00010366104072604622, 'epochs': 64}. Best is trial 12 with value: 1.5500335089768036.
+[I 2024-11-30 22:37:40,079] Trial 15 finished with value: 1.56043820168562 and parameters: {'batch_size': 32, 'num_neurons': 64, 'conv_neurons': 32, 'num_layers': 4, 'lr': 0.00011857274662353293, 'epochs': 64}. Best is trial 12 with value: 1.5500335089768036.
+[I 2024-11-30 23:08:08,881] Trial 16 finished with value: 1.554382591490533 and parameters: {'batch_size': 32, 'num_neurons': 64, 'conv_neurons': 32, 'num_layers': 4, 'lr': 0.00011351491779525318, 'epochs': 64}. Best is trial 12 with value: 1.5500335089768036.
+[I 2024-11-30 23:29:51,781] Trial 17 finished with value: 1.5550987879941418 and parameters: {'batch_size': 32, 'num_neurons': 64, 'conv_neurons': 32, 'num_layers': 4, 'lr': 0.0001056958860808558, 'epochs': 66}. Best is trial 12 with value: 1.5500335089768036.
+[I 2024-12-01 02:54:18,370] Trial 18 finished with value: 1.5523173323102817 and parameters: {'batch_size': 32, 'num_neurons': 64, 'conv_neurons': 32, 'num_layers': 4, 'lr': 0.00012382682136801362, 'epochs': 89}. Best is trial 12 with value: 1.5500335089768036.
+[I 2024-12-01 06:36:38,589] Trial 19 finished with value: 1.5577770069146613 and parameters: {'batch_size': 32, 'num_neurons': 64, 'conv_neurons': 32, 'num_layers': 4, 'lr': 0.0008885772497069254, 'epochs': 91}. Best is trial 12 with value: 1.5500335089768036.
+[I 2024-12-01 06:36:38,591] A new study created in memory with name: no-name-47cc7e30-7cb2-4d31-809a-7b775db3c312
+[I 2024-12-01 08:55:48,703] Trial 2 finished with value: 1.6170655757188797 and parameters: {'batch_size': 128, 'num_neurons': 64, 'conv_neurons': 32, 'num_layers': 2, 'lr': 0.00027082548049470857, 'epochs': 91}. Best is trial 2 with value: 1.6170655757188797.
+[I 2024-12-01 09:14:03,278] Trial 4 finished with value: 1.6472968255417257 and parameters: {'batch_size': 64, 'num_neurons': 128, 'conv_neurons': 32, 'num_layers': 2, 'lr': 0.0025013306255590377, 'epochs': 86}. Best is trial 2 with value: 1.6170655757188797.
+[I 2024-12-01 09:22:10,228] Trial 3 finished with value: 1.584476571933479 and parameters: {'batch_size': 32, 'num_neurons': 128, 'conv_neurons': 32, 'num_layers': 3, 'lr': 0.0001063290718892425, 'epochs': 66}. Best is trial 3 with value: 1.584476571933479.
+[I 2024-12-01 10:35:38,633] Trial 1 finished with value: 1.5640593588352203 and parameters: {'batch_size': 128, 'num_neurons': 64, 'conv_neurons': 32, 'num_layers': 4, 'lr': 0.0010828210126278234, 'epochs': 91}. Best is trial 1 with value: 1.5640593588352203.
+[I 2024-12-01 11:14:28,258] Trial 0 finished with value: 2.1573533859981855 and parameters: {'batch_size': 32, 'num_neurons': 256, 'conv_neurons': 32, 'num_layers': 4, 'lr': 0.002132468851800151, 'epochs': 78}. Best is trial 1 with value: 1.5640593588352203.
+[I 2024-12-01 11:58:02,532] Trial 5 finished with value: 1.607733489591864 and parameters: {'batch_size': 64, 'num_neurons': 64, 'conv_neurons': 64, 'num_layers': 2, 'lr': 0.0002450900401777942, 'epochs': 79}. Best is trial 1 with value: 1.5640593588352203.
+[I 2024-12-01 12:20:49,568] Trial 7 finished with value: 1.5720923746688455 and parameters: {'batch_size': 64, 'num_neurons': 128, 'conv_neurons': 64, 'num_layers': 3, 'lr': 0.0006121328477341727, 'epochs': 54}. Best is trial 1 with value: 1.5640593588352203.
+[I 2024-12-01 13:41:47,009] Trial 11 finished with value: 2.3025726638262785 and parameters: {'batch_size': 64, 'num_neurons': 64, 'conv_neurons': 16, 'num_layers': 2, 'lr': 0.007624866076783801, 'epochs': 54}. Best is trial 1 with value: 1.5640593588352203.
+[I 2024-12-01 13:46:40,852] Trial 6 finished with value: 1.5648407166517233 and parameters: {'batch_size': 64, 'num_neurons': 64, 'conv_neurons': 32, 'num_layers': 4, 'lr': 0.00037934189438983785, 'epochs': 72}. Best is trial 1 with value: 1.5640593588352203.
+[I 2024-12-01 14:05:03,117] Trial 10 finished with value: 1.7497250497341157 and parameters: {'batch_size': 128, 'num_neurons': 128, 'conv_neurons': 32, 'num_layers': 3, 'lr': 0.0034701296019404152, 'epochs': 72}. Best is trial 1 with value: 1.5640593588352203.
+[I 2024-12-01 14:06:07,262] Trial 8 finished with value: 2.302584798472702 and parameters: {'batch_size': 32, 'num_neurons': 256, 'conv_neurons': 64, 'num_layers': 2, 'lr': 0.004657848219384323, 'epochs': 61}. Best is trial 1 with value: 1.5640593588352203.
+[I 2024-12-01 16:10:42,159] Trial 13 finished with value: 1.6921883601291923 and parameters: {'batch_size': 32, 'num_neurons': 128, 'conv_neurons': 16, 'num_layers': 2, 'lr': 0.002852607458129695, 'epochs': 66}. Best is trial 1 with value: 1.5640593588352203.
+[I 2024-12-01 16:55:19,866] Trial 12 finished with value: 2.184845382240927 and parameters: {'batch_size': 32, 'num_neurons': 256, 'conv_neurons': 64, 'num_layers': 3, 'lr': 0.0036622719844908464, 'epochs': 51}. Best is trial 1 with value: 1.5640593588352203.
+[I 2024-12-01 17:06:07,929] Trial 14 finished with value: 1.5723076343536377 and parameters: {'batch_size': 128, 'num_neurons': 256, 'conv_neurons': 16, 'num_layers': 4, 'lr': 0.0011256034400964226, 'epochs': 96}. Best is trial 1 with value: 1.5640593588352203.
+[I 2024-12-01 17:07:22,376] Trial 15 finished with value: 1.5744364351034164 and parameters: {'batch_size': 128, 'num_neurons': 64, 'conv_neurons': 16, 'num_layers': 4, 'lr': 0.000854197029169846, 'epochs': 100}. Best is trial 1 with value: 1.5640593588352203.
+[I 2024-12-01 17:43:51,857] Trial 9 finished with value: 1.5649561464406883 and parameters: {'batch_size': 32, 'num_neurons': 128, 'conv_neurons': 64, 'num_layers': 3, 'lr': 0.0003290494260128198, 'epochs': 78}. Best is trial 1 with value: 1.5640593588352203.
+[I 2024-12-01 20:43:48,754] Trial 16 finished with value: 1.5649680137634276 and parameters: {'batch_size': 128, 'num_neurons': 64, 'conv_neurons': 32, 'num_layers': 4, 'lr': 0.0009029120313397092, 'epochs': 98}. Best is trial 1 with value: 1.5640593588352203.
+[I 2024-12-01 20:48:09,281] Trial 18 finished with value: 1.563310268521309 and parameters: {'batch_size': 128, 'num_neurons': 64, 'conv_neurons': 32, 'num_layers': 4, 'lr': 0.0007271256026303856, 'epochs': 85}. Best is trial 18 with value: 1.563310268521309.
+[I 2024-12-01 21:01:36,845] Trial 17 finished with value: 1.562126737833023 and parameters: {'batch_size': 128, 'num_neurons': 64, 'conv_neurons': 32, 'num_layers': 4, 'lr': 0.0009423392549493738, 'epochs': 96}. Best is trial 17 with value: 1.562126737833023.
+[I 2024-12-01 22:03:26,389] Trial 19 finished with value: 1.5652526798127573 and parameters: {'batch_size': 64, 'num_neurons': 64, 'conv_neurons': 32, 'num_layers': 4, 'lr': 0.00041737384421449976, 'epochs': 85}. Best is trial 17 with value: 1.562126737833023.
+[I 2024-12-01 22:03:26,392] A new study created in memory with name: no-name-5f56fe2c-0a9c-480d-a03a-cffe3f835599
+[I 2024-12-01 22:42:27,082] Trial 2 finished with value: 1.67479068154742 and parameters: {'batch_size': 32, 'num_neurons': 128, 'conv_neurons': 16, 'num_layers': 2, 'lr': 0.002434432496373743, 'epochs': 64}. Best is trial 2 with value: 1.67479068154742.
+[I 2024-12-01 22:49:17,113] Trial 3 finished with value: 2.302597814798355 and parameters: {'batch_size': 128, 'num_neurons': 64, 'conv_neurons': 32, 'num_layers': 4, 'lr': 0.008981578513117393, 'epochs': 91}. Best is trial 2 with value: 1.67479068154742.
+[I 2024-12-01 22:55:19,461] Trial 1 finished with value: 2.3025890483131892 and parameters: {'batch_size': 64, 'num_neurons': 256, 'conv_neurons': 64, 'num_layers': 2, 'lr': 0.005330801195889656, 'epochs': 77}. Best is trial 2 with value: 1.67479068154742.
+[I 2024-12-01 23:07:49,582] Trial 0 finished with value: 2.302585342127806 and parameters: {'batch_size': 32, 'num_neurons': 256, 'conv_neurons': 32, 'num_layers': 2, 'lr': 0.007456944386050174, 'epochs': 91}. Best is trial 2 with value: 1.67479068154742.
+[I 2024-12-01 23:19:09,825] Trial 4 finished with value: 2.3025869870487647 and parameters: {'batch_size': 64, 'num_neurons': 256, 'conv_neurons': 64, 'num_layers': 4, 'lr': 0.009339212486265853, 'epochs': 79}. Best is trial 2 with value: 1.67479068154742.
+[I 2024-12-01 23:22:28,746] Trial 5 finished with value: 1.8009280388868307 and parameters: {'batch_size': 64, 'num_neurons': 128, 'conv_neurons': 32, 'num_layers': 3, 'lr': 0.003427155324670633, 'epochs': 60}. Best is trial 2 with value: 1.67479068154742.
+[I 2024-12-01 23:26:40,362] Trial 7 finished with value: 1.6459838092327117 and parameters: {'batch_size': 128, 'num_neurons': 64, 'conv_neurons': 16, 'num_layers': 4, 'lr': 0.0004935286307843626, 'epochs': 70}. Best is trial 7 with value: 1.6459838092327117.
+[I 2024-12-01 23:40:37,866] Trial 8 finished with value: 1.6914151191711426 and parameters: {'batch_size': 128, 'num_neurons': 128, 'conv_neurons': 64, 'num_layers': 2, 'lr': 0.0014025944027650403, 'epochs': 56}. Best is trial 7 with value: 1.6459838092327117.
+[I 2024-12-02 00:03:23,607] Trial 9 finished with value: 1.6489204832270175 and parameters: {'batch_size': 64, 'num_neurons': 64, 'conv_neurons': 16, 'num_layers': 3, 'lr': 0.0007022312029980478, 'epochs': 90}. Best is trial 7 with value: 1.6459838092327117.
+[I 2024-12-02 00:05:01,992] Trial 11 finished with value: 1.649270335330239 and parameters: {'batch_size': 64, 'num_neurons': 256, 'conv_neurons': 16, 'num_layers': 2, 'lr': 0.0012217906478479898, 'epochs': 83}. Best is trial 7 with value: 1.6459838092327117.
+[I 2024-12-02 00:07:08,740] Trial 6 finished with value: 1.619542208313942 and parameters: {'batch_size': 128, 'num_neurons': 128, 'conv_neurons': 64, 'num_layers': 4, 'lr': 0.00041557972826349753, 'epochs': 96}. Best is trial 6 with value: 1.619542208313942.
+[I 2024-12-02 00:10:51,825] Trial 10 finished with value: 1.667401067770211 and parameters: {'batch_size': 32, 'num_neurons': 64, 'conv_neurons': 16, 'num_layers': 2, 'lr': 0.0005556408247999271, 'epochs': 86}. Best is trial 6 with value: 1.619542208313942.
+[I 2024-12-02 00:19:28,138] Trial 12 finished with value: 1.7247236222028732 and parameters: {'batch_size': 128, 'num_neurons': 64, 'conv_neurons': 32, 'num_layers': 2, 'lr': 0.0027997215011049776, 'epochs': 95}. Best is trial 6 with value: 1.619542208313942.
